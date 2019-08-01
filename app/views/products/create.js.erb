@@ -1,0 +1,10 @@
+<% if @product.errors.empty? %>
+  // add the row to the table, show alert and hide modal
+  $('.list-group').append(' <%= j render "row", product: @product %>');
+  $('.alert-success').html("El producto ha sido creado con éxito").show();
+  $('#product-modal').remove();
+  $('.modal-backdrop').remove();
+<% else %>
+  // show first error
+  alert('<%= @product.errors.full_messages[0] %>');
+<% end %>
