@@ -1,0 +1,3 @@
+$('#<%= j "#{@product.id}" %>').replaceWith('<%= j render "row", product: @product %>')
+$('#product-modal').remove();
+$('.modal-backdrop').remove();

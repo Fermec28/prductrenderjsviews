@@ -1,9 +1,9 @@
-<div href="#" class="list-group-item list-group-item-action">
+<div href="#" class="list-group-item list-group-item-action" id="<%= @product.id%>">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1"><%=@product.name %></h5>
       <h5 class="mb-1"><%=@product.price %></h5>
     </div>
-    <p class="mb-1"><%= link_to 'Edit', edit_product_path(@product), :class => "btn" %> |
-      <%= link_to 'Back', products_path, :class => "btn"%></p>
+    <p class="mb-1"><%= link_to 'Edit', edit_product_path(@product), remote:true, :class => "btn" %> |
+      <%= link_to 'Back', products_path, :class => "btn"%> | <%= link_to 'Destroy',  product,  method: :delete, remote:true, data: { confirm: 'Are you sure?' } %></p>
     <small>Donec id elit non mi porta.</small>
   </div>
